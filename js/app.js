@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
   var studentsList = document.getElementById('studentsList');
   var template = document.getElementById('studentCardTemplate');
 
-  // Llama a la función getStudents definida en api.js
   window.getStudents()
     .then(function(students) {
       studentsList.innerHTML = '';
@@ -28,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
   document.getElementById('addNewStudent').addEventListener('click', function() {
-    alert('Redirigir a formulario de nuevo estudiante');
+    // Redirige a la página para agregar un nuevo estudiante
+    window.location.href = 'nuevo-estudiante.html';
   });
 });

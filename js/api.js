@@ -18,5 +18,22 @@ function getStudents() {
   });
 }
 
-// Se expone la función globalmente
+function createStudent(student) {
+  return fetch(API_URL + '/alumno', {
+    method: 'POST',
+    headers: {
+      'apikey': API_KEY,
+      'Authorization': 'Bearer ' + API_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': 'return=representation'
+    },
+    body: JSON.stringify(student)
+  })
+  .then(function(response) {
+    if (!response.ok) throw new Error('Error al crear estudiante');
+    return response.json();
+  });
+}
+
 window.getStudents = getStudents;
+window.createStudent = createStudent;
