@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Botón cancelar: redirige de vuelta a la lista de estudiantes
     document.getElementById('cancelButton').addEventListener("click", function() {
-      window.location.href = "estudiantes.html";
+      window.location.href = "../html/estudiantes.html";
     });
   });
   

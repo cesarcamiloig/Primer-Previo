@@ -5,13 +5,19 @@ document.addEventListener("DOMContentLoaded", function() {
       e.preventDefault();
       
       var newStudent = {
-        codigo: document.getElementById('codigo').value,
-        nombre: document.getElementById('nombre').value,
-        email: document.getElementById('email').value,
-        telefono: document.getElementById('telefono').value,
-        direccion: document.getElementById('direccion').value,
+        codigo: document.getElementById('codigo').value.trim(),
+        nombre: document.getElementById('nombre').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        telefono: document.getElementById('telefono').value.trim(),
+        direccion: document.getElementById('direccion').value.trim(),
         fecha_nacimiento: document.getElementById('fecha_nacimiento').value
       };
+      
+      // Opcional: Validar que los campos requeridos no estén vacíos
+      if (!newStudent.codigo || !newStudent.nombre || !newStudent.email || !newStudent.telefono) {
+        alert("Por favor, completa todos los campos requeridos");
+        return;
+      }
       
       window.createStudent(newStudent)
         .then(function(response) {
@@ -20,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(function(error) {
           console.error('Error al crear estudiante:', error);
-          alert('Error al crear estudiante');
+          alert('Error al crear estudiante: ' + error.message);
         });
     });
     
     document.getElementById('cancelButton').addEventListener('click', function() {
-      window.location.href = '../html/estudiantes.html';
+      window.location.href = 'estudiantes.html';
     });
   });
   

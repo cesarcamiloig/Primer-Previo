@@ -18,6 +18,27 @@ function getStudents() {
   });
 }
 
+function createStudent(student) {
+    return fetch(API_URL + '/alumno', {
+      method: 'POST',
+      headers: {
+        'apikey': API_KEY,
+        'Authorization': 'Bearer ' + API_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=representation'
+      },
+      body: JSON.stringify(student)
+    })
+    .then(function(response) {
+      if (!response.ok) {
+        return response.text().then(function(text) {
+          throw new Error('Error al crear estudiante: ' + text);
+        });
+      }
+      return response.json();
+    });
+  }
+
 function getStudentByCode(codigo) {
   return fetch(API_URL + '/alumno?codigo=eq.' + codigo + '&select=*', {
     headers: {
