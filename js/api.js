@@ -18,9 +18,26 @@ function getStudents() {
   });
 }
 
-function createStudent(student) {
-  return fetch(API_URL + '/alumno', {
-    method: 'POST',
+function getStudentByCode(codigo) {
+  return fetch(API_URL + '/alumno?codigo=eq.' + codigo + '&select=*', {
+    headers: {
+      'apikey': API_KEY,
+      'Authorization': 'Bearer ' + API_KEY,
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(function(response) {
+    if (!response.ok) throw new Error('Error al obtener estudiante');
+    return response.json();
+  })
+  .then(function(data) {
+    return data[0]; // Asume que el primer elemento es el estudiante deseado
+  });
+}
+
+function updateStudent(codigo, student) {
+  return fetch(API_URL + '/alumno?codigo=eq.' + codigo, {
+    method: 'PATCH',
     headers: {
       'apikey': API_KEY,
       'Authorization': 'Bearer ' + API_KEY,
@@ -30,10 +47,11 @@ function createStudent(student) {
     body: JSON.stringify(student)
   })
   .then(function(response) {
-    if (!response.ok) throw new Error('Error al crear estudiante');
+    if (!response.ok) throw new Error('Error al actualizar estudiante');
     return response.json();
   });
 }
 
 window.getStudents = getStudents;
-window.createStudent = createStudent;
+window.getStudentByCode = getStudentByCode;
+window.updateStudent = updateStudent;
