@@ -13,9 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
         clone.querySelector('.student-phone').textContent = student.telefono;
         
         // Para el botón "Ver" (sin funcionalidad en este paso)
+        // Dentro del código que recorre la lista de estudiantes:
         clone.querySelector('.btn-view').addEventListener('click', function() {
-          alert('Ver estudiante: ' + student.codigo);
+          window.location.href = 'ver-estudiante.html?codigo=' + encodeURIComponent(student.codigo);
         });
+
         // Botón "Editar" redirige a la página de edición con el código en la query string
         clone.querySelector('.btn-edit').addEventListener('click', function() {
           window.location.href = 'editar-estudiante.html?codigo=' + encodeURIComponent(student.codigo);
