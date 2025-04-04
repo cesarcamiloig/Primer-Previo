@@ -1,60 +1,59 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  header {
-    padding: 2rem;
-    text-align: center;
-    background-color: #007bff;
-    color: white;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .menu {
-    display: flex;
-    gap: 2rem;
-    padding: 3rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  
-  .card {
-    background-color: white;
-    padding: 2rem;
-    width: 200px;
-    height: 150px;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    background-color: #e8f0fe;
-  }
-  
-  
-  .card.inactive {
-    background-color: #e0e0e0;
-    color: #888;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  padding: 2rem;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.card {
+  background-color: white;
+  padding: 2rem;
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background-color: #e8f0fe;
+}
+
+
+.card.inactive {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+  pointer-events: none;
+}
