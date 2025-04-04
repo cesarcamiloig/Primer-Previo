@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ver Estudiante</title>
+  <link rel="stylesheet" href="../css/estudiantes.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Información del Estudiante</h1>
+  </header>
+  <main class="view-container">
+    <section class="student-info">
+      <h2>Datos del Estudiante</h2>
+      <p><strong>Código:</strong> <span id="codigo"></span></p>
+      <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+      <p><strong>Dirección:</strong> <span id="direccion"></span></p>
+      <p><strong>Fecha de Nacimiento:</strong> <span id="fecha_nacimiento"></span></p>
+    </section>
+    <section class="student-subjects">
+      <h2>Materias Matriculadas</h2>
+      <!-- Aquí se mostrarán las materias matriculadas, funcionalidad pendiente -->
+      <div id="subjectsList">
+        <p>Sin materias matriculadas</p>
+      </div>
+      <h2>Matricular Materias</h2>
+      <!-- Estructura para la opción de matricular materias (límite de 14 créditos) -->
+      <div id="enrollSection">
+        <p>Funcionalidad pendiente</p>
+      </div>
+    </section>
+    <button id="backButton" class="btn">Volver a Estudiantes</button>
+  </main>
+  <script src="../js/ver-estudiante.js"></script>
+</body>
+</html>
