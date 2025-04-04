@@ -12,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
         clone.querySelector('.student-email').textContent = student.email;
         clone.querySelector('.student-phone').textContent = student.telefono;
         
+        // Para el botón "Ver" (sin funcionalidad en este paso)
         clone.querySelector('.btn-view').addEventListener('click', function() {
           alert('Ver estudiante: ' + student.codigo);
         });
+        // Botón "Editar" redirige a la página de edición con el código en la query string
         clone.querySelector('.btn-edit').addEventListener('click', function() {
-          alert('Editar estudiante: ' + student.codigo);
+          window.location.href = 'editar-estudiante.html?codigo=' + encodeURIComponent(student.codigo);
         });
         
         studentsList.appendChild(clone);
@@ -27,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
   document.getElementById('addNewStudent').addEventListener('click', function() {
-    // Redirige a la página para agregar un nuevo estudiante
     window.location.href = 'nuevo-estudiante.html';
   });
 });
